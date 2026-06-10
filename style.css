@@ -1,18 +1,17 @@
 :root {
-  --cor-celular: #6148ec; /* Azul */
-  --cor-tablet: #06b6d4; /* Ciano */
-  --cor-desktop: #10b981; /* Verde */
+  --cor-celular: #6148ec; 
+  --cor-tablet: #0636d4; 
+  --cor-desktop: #b91010; 
   --cor-background: #0f172a;
 }
 
-/* Configurações Globais Básicas */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Cabeçalho */
 .cabecalho {
   text-align: center;
   margin-top: 20px;
@@ -110,21 +109,43 @@ footer {
    ESTADO 1: CELULAR (Padrão - Menor que 600px)
    ========================================================================== */
 
-/* Alturas das caixas no Celular */
+   @media  (max-width: 600px) {
+
 .caixa {
   height: 120px;
 }
+.anão{
+  display: none;
+}
+
+.ladino{
+display: none;
+}
+.Mago{
+  display: none;
+}
+h5{
+  display: none;
+}
+.imagem{
+  display: none;
+}
+
+.imagem-2{
+  display: none;
+}
+
+
+
 .caixa-2,
 .caixa-4 {
   height: 160px;
 }
 
-/* Todas as caixas usam a mesma cor base do celular via var() */
 .caixa {
   background-color: var(--cor-celular);
 }
 
-/* Estrutura das Mini Caixas internas */
 .mini-container {
   display: flex;
   gap: 12px;
@@ -139,7 +160,6 @@ footer {
   border: 2px solid var(--cor-celular);
 }
 
-/* Indicador dinâmico no topo */
 .indicador-tela {
   background-color: var(--cor-celular);
   color: white;
@@ -155,3 +175,142 @@ footer {
 .indicador-tela .badge::after {
   content: "Visualização: Celular (tela < 600px)";
 }
+
+} 
+
+
+/* ==========================================================================
+   ESTADO 2: TABLET (LARGURA >= 600PX)
+   ========================================================================== */
+
+   @media  (min-width: 600px) and (max-width: 1024px){
+
+
+    
+.caixa {
+  height: 120px;
+}
+.anão{
+  display: none;
+}
+
+.ladino{
+display: none;
+}
+.Mago{
+  display: none;
+}
+h5{
+  display: none;
+}
+h2{
+  display: none;
+}
+
+.imagem{
+  width: 150px;
+}
+
+.imagem-2{
+  height: 150px;
+  width: 200px;
+}
+
+
+
+    
+.cabecalho h1 span{
+  color: var(--cor-tablet);
+}
+
+.container{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 20px;
+}
+
+
+.caixa{
+  height: 200px;
+  background-color: var(--cor-tablet);
+}
+
+.caixa-1{ 
+
+
+}
+
+.caixa-3{
+  grid-column: span 2;
+}
+
+.caixa-2{
+
+}
+
+.caixa-4 {
+grid-column: span 2;
+}
+
+
+   }
+
+   /* ==========================================================================
+   ESTADO 3: PC (LARGURA >= 600PX)
+   ========================================================================== */
+
+   @media (min-width: 1024px){
+
+    .container{
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      grid-template-rows: repeat(4,1fr);
+    }
+
+    .cabecalho h1 span{
+  color: var(--cor-desktop);
+}
+
+
+
+    .caixa{
+      background-color: var(--cor-desktop );
+      height: 400px;
+    }
+
+    .caixa-1{
+      grid-column: span 2;
+    }
+
+    .caixa-2{
+      grid-column: span 2;
+    }
+    .ladino{
+      height: 200px;
+      width: 200px;
+    }
+
+    .caixa-3{
+      grid-column: span 4;
+    }
+
+
+    .Mago{
+      border-radius: 50%;
+          height: 200px;
+      width: 200px;
+    }
+
+
+    .caixa-4{
+      grid-column: span 2;
+    }
+    .caixa-5{
+      grid-column: span 2z;
+    }
+    .caixa-6{
+      grid-column: span 4;
+    }
+
+
+   }
